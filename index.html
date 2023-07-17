@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+        integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- google fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;500&family=Poppins:wght@200;400&display=swap"
+        rel="stylesheet">
+    <!-- local stylesheet -->
+    <link rel="stylesheet" href="index.css">
+    <title>Coffee App</title>
+</head>
+
+<body>
+    <nav>
+        <div class="container mt">
+            <div class="fa-icon"><i class="fa-solid fa-bars fa-lg"></i></div>
+            <div class="fa-icon"><i class="fa-solid fa-user fa-lg"></i></div>
+        </div>
+    </nav>
+    <header>
+        <div class="container">
+            <h1 class="top-text">Find the best coffee for you</h1>
+            <input class="input-search" type="text" placeholder="Find your coffee">
+        </div>
+    </header>
+    <main>
+        <div class="container">
+            <div id="item-container">
+                <!-- menu items here -->
+            </div>
+        </div>
+    </main>
+    <div id="order-container">
+        <div id="order">
+            <!-- order items with total here -->
+        </div>
+    </div>
+    <!-- modal -->
+    <div class="modal" id="modal">
+        <div class="close-modal-btn-container">
+            <button class="modal-close-btn" id="modal-close-btn">X</button>
+        </div>
+        <div class="modal-inner" id="modal-inner">
+            <h2>Enter card details</h2>
+            <form id="order-form">
+                <input type="text" name="fullName" placeholder="Enter your name" required />
+                <input type="number" name="cardNumber" placeholder="Enter card number" required />
+                <input type="number" name="cvv" placeholder="Enter CVV" required />
+                <button class="btn-pay" id="btn-pay">Pay</button>
+            </form>
+        </div>
+    </div>
+    <div class="modal-cover" id="modal-cover"></div>
+    <script type="module" src="index.js"></script>
+</body>
+
+</html>
