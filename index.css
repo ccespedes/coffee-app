@@ -193,6 +193,7 @@ hr {
   border-radius: 12px;
   padding: 15px 25px;
   font-weight: 600;
+  font-size: 16px;
 }
 
 #btn-complete-order:active {
@@ -261,7 +262,7 @@ hr {
   width: 100%;
   height: 100%;
   z-index: 5;
-  background: rgba(0, 0, 0, 0.44);
+  background: rgba(28, 28, 28, 0.78);
   display: none;
 }
 
@@ -299,6 +300,7 @@ hr {
   font-weight: 600;
   margin-top: 20px;
   width: 100%;
+  font-size: 16px;
 }
 
 /* modal input */
