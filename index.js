@@ -25,7 +25,7 @@ function renderMenu() {
                 </div>
                 <div class="item-info-price">
                     <p>$${price}</p>
-                    <div data-add="${item.id}" class="btn-add-item"><i class="fa-solid fa-plus fa-xs"></i></div>
+                    <div data-add="${item.id}" class="btn btn-add-item"><i class="fa-solid fa-plus fa-xs"></i></div>
                 </div>
             </div>
         `
@@ -121,7 +121,7 @@ function renderOrder() {
             <h4>Total</h4>
             <p>$${total}</p>
         </div>
-        <button id="btn-complete-order">Complete order</button>
+        <button id="btn-complete-order" class="btn btn-complete-order">Complete order</button>
     `
     order.innerHTML = orderHtml
 }
