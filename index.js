@@ -68,7 +68,7 @@ function deleteItem(itemId) {
         .filter((item) => item == itemId)[0]
     const position = orderList.indexOf(targetItem)
     orderList.splice(position, 1)
-    orderList < 1 ?
+    orderList.length < 1 ?
         orderContainer.style.display = 'none' :
         renderOrder()
 }
@@ -83,6 +83,11 @@ function closeModal() {
     modalCover.style.display = 'none'
 }
 
+function roundPrice(price) {
+    const roundedPrice = (Math.round(price * 100) / 100).toFixed(2)
+    return roundedPrice
+}
+
 function renderOrder() {
     orderContainer.style.display = 'block'
     let orderHtml = `<h2>Your order</h2>`
@@ -91,7 +96,8 @@ function renderOrder() {
     let total = ``
     orderList.map((itemId) => {
         menuArray.find((item) => {
-            const price = (Math.round(item.price * 100) / 100).toFixed(2)
+            //const price = (Math.round(item.price * 100) / 100).toFixed(2)
+            const price = roundPrice(item.price)
             if (item.id == itemId) {
                 subTotal = Number(subTotal) + Number(price)
                 orderHtml += `
@@ -104,9 +110,9 @@ function renderOrder() {
             }
         })
     })
-    subTotal = (Math.round(subTotal * 100) / 100).toFixed(2)
-    tax = (Math.round((subTotal * .09) * 100) / 100).toFixed(2)
-    total = Number(subTotal) + Number(tax)
+    subTotal = roundPrice(subTotal)
+    tax = roundPrice((subTotal * .09))
+    total = roundPrice(Number(subTotal) + Number(tax))
     orderHtml += `
         <hr>
         <div class="order-item">
